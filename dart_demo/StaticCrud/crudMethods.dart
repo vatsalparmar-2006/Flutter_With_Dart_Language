@@ -46,4 +46,13 @@ class Users {
     }
     print("Error: User with ID $id not found.\n");
   }
+
+  // search user
+  void search({required searchData}){
+    for(dynamic i in users){
+      if(i[NAME].toString().toLowerCase().contains(searchData.toString().toLowerCase()) || i[ID].toString().toLowerCase().contains(searchData.toString().toLowerCase())){
+        print('${i[NAME]} . ${i[ID]}');
+      }
+    }
+  }
 }
