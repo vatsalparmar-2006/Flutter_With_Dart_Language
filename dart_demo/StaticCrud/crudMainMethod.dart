@@ -13,7 +13,8 @@ void main() {
         '2 for update a user \n'
         '3 for delete(remove) a user \n'
         '4 for display users \n'
-        '5 for exit \n');
+        '5 for search users \n'
+        '6 for exit \n');
 
     choice = int.parse(stdin.readLineSync()!);
 
@@ -49,8 +50,15 @@ void main() {
         print('');
         break;
 
+      case 5:
+        stdout.write("Enter SearchData:");
+        dynamic data = stdin.readLineSync()!;
+        user.search(searchData: data);
+        print('');
+        break;
+
       default:
         print('Invalid Choice!!!');
     }
-  } while (choice != 5);
+  } while (choice != 6);
 }
